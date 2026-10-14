@@ -14,6 +14,7 @@ decisive_matches,80.0
 rank_rule_accuracy,0.85
 accuracy_OLS (rank only),0.825
 accuracy_OLS (8 variables),0.8125
+"accuracy_OLS (8 vars, capped rank)",0.825
 accuracy_Ridge,0.8
 accuracy_Lasso,0.8375
 accuracy_Random forest,0.875
