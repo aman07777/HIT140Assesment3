@@ -2,13 +2,6 @@
 
 Two linear regression models built from pre-match information only:
 
-| Task | Predicts | Rows | Explanatory variables |
-|------|----------|------|-----------------------|
-| 2.1  | Goal difference of a match (Team A - Team B) | 104 | 8 (rank gap, host, same confederation, stage, titles, rest, points, confederation strength) |
-| 2.2  | Goals scored by one team in one match        | 208 | 8 (rank advantage, host, same confederation, stage, own scoring form, opponent conceding form, team/opponent is European) |
-
-The brief allows at most 4 shared variables: we share exactly 4 (ranking gap, host, same confederation, stage).
-
 ## Folder layout
 ```
 data/      matches_raw.csv, team_info.csv        (source data we compiled)
