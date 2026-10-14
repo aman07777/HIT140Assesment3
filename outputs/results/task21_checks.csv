@@ -1,0 +1,20 @@
+,value
+n_rows,104.0
+r2,0.42831414302819526
+adjusted_r2,0.3801721761253064
+max_vif,2.097650683428214
+breusch_pagan_p,0.2293198635974721
+shapiro_p,0.871028563786856
+negative_predictions_pct,37.5
+max_correlation_between_predictors,0.5423026760838138
+outliers_removed,1.0
+rank_coef_all_rows,0.03247333957773779
+rank_coef_without_outliers,0.031857663026867156
+decisive_matches,80.0
+rank_rule_accuracy,0.85
+accuracy_OLS (rank only),0.825
+accuracy_OLS (8 variables),0.8125
+accuracy_Ridge,0.8
+accuracy_Lasso,0.8375
+accuracy_Random forest,0.875
+accuracy_Gradient boosting,0.8875

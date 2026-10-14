@@ -1,0 +1,105 @@
+date,team_a,score_a,score_b,team_b,stage,group,went_to_penalties
+2026-06-12,Mexico,2,0,South Africa,Group,A,0
+2026-06-12,Korea Republic,2,1,Czechia,Group,A,0
+2026-06-13,Canada,1,1,Bosnia-Herzegovina,Group,B,0
+2026-06-13,USA,4,1,Paraguay,Group,D,0
+2026-06-14,Qatar,1,1,Switzerland,Group,B,0
+2026-06-14,Brazil,1,1,Morocco,Group,C,0
+2026-06-14,Haiti,0,1,Scotland,Group,C,0
+2026-06-14,Australia,2,0,Turkiye,Group,D,0
+2026-06-15,Germany,7,1,Curacao,Group,E,0
+2026-06-15,Netherlands,2,2,Japan,Group,F,0
+2026-06-15,Cote d'Ivoire,1,0,Ecuador,Group,E,0
+2026-06-15,Sweden,5,1,Tunisia,Group,F,0
+2026-06-16,Spain,0,0,Cabo Verde,Group,H,0
+2026-06-16,Belgium,1,1,Egypt,Group,G,0
+2026-06-16,Saudi Arabia,1,1,Uruguay,Group,H,0
+2026-06-16,IR Iran,2,2,New Zealand,Group,G,0
+2026-06-17,France,3,1,Senegal,Group,I,0
+2026-06-17,Iraq,1,4,Norway,Group,I,0
+2026-06-17,Argentina,3,0,Algeria,Group,J,0
+2026-06-17,Austria,3,1,Jordan,Group,J,0
+2026-06-18,Portugal,1,1,Congo DR,Group,K,0
+2026-06-18,England,4,2,Croatia,Group,L,0
+2026-06-18,Ghana,1,0,Panama,Group,L,0
+2026-06-18,Uzbekistan,1,3,Colombia,Group,K,0
+2026-06-19,Czechia,1,1,South Africa,Group,A,0
+2026-06-19,Switzerland,4,1,Bosnia-Herzegovina,Group,B,0
+2026-06-19,Canada,6,0,Qatar,Group,B,0
+2026-06-19,Mexico,1,0,Korea Republic,Group,A,0
+2026-06-20,USA,2,0,Australia,Group,D,0
+2026-06-20,Scotland,0,1,Morocco,Group,C,0
+2026-06-20,Brazil,3,0,Haiti,Group,C,0
+2026-06-20,Turkiye,0,1,Paraguay,Group,D,0
+2026-06-21,Netherlands,5,1,Sweden,Group,F,0
+2026-06-21,Germany,2,1,Cote d'Ivoire,Group,E,0
+2026-06-21,Ecuador,0,0,Curacao,Group,E,0
+2026-06-21,Tunisia,0,4,Japan,Group,F,0
+2026-06-22,Spain,4,0,Saudi Arabia,Group,H,0
+2026-06-22,Belgium,0,0,IR Iran,Group,G,0
+2026-06-22,Uruguay,2,2,Cabo Verde,Group,H,0
+2026-06-22,New Zealand,1,3,Egypt,Group,G,0
+2026-06-23,Argentina,2,0,Austria,Group,J,0
+2026-06-23,France,3,0,Iraq,Group,I,0
+2026-06-23,Norway,3,2,Senegal,Group,I,0
+2026-06-23,Jordan,1,2,Algeria,Group,J,0
+2026-06-24,Portugal,5,0,Uzbekistan,Group,K,0
+2026-06-24,England,0,0,Ghana,Group,L,0
+2026-06-24,Panama,0,1,Croatia,Group,L,0
+2026-06-24,Colombia,1,0,Congo DR,Group,K,0
+2026-06-25,Switzerland,2,1,Canada,Group,B,0
+2026-06-25,Bosnia-Herzegovina,3,1,Qatar,Group,B,0
+2026-06-25,Scotland,0,3,Brazil,Group,C,0
+2026-06-25,Morocco,4,2,Haiti,Group,C,0
+2026-06-25,Czechia,0,3,Mexico,Group,A,0
+2026-06-25,South Africa,1,0,Korea Republic,Group,A,0
+2026-06-26,Curacao,0,2,Cote d'Ivoire,Group,E,0
+2026-06-26,Ecuador,2,1,Germany,Group,E,0
+2026-06-26,Japan,1,1,Sweden,Group,F,0
+2026-06-26,Tunisia,1,3,Netherlands,Group,F,0
+2026-06-26,Turkiye,3,2,USA,Group,D,0
+2026-06-26,Paraguay,0,0,Australia,Group,D,0
+2026-06-27,Norway,1,4,France,Group,I,0
+2026-06-27,Senegal,5,0,Iraq,Group,I,0
+2026-06-27,Cabo Verde,0,0,Saudi Arabia,Group,H,0
+2026-06-27,Uruguay,0,1,Spain,Group,H,0
+2026-06-27,Egypt,1,1,IR Iran,Group,G,0
+2026-06-27,New Zealand,1,5,Belgium,Group,G,0
+2026-06-28,Panama,0,2,England,Group,L,0
+2026-06-28,Croatia,2,1,Ghana,Group,L,0
+2026-06-28,Colombia,0,0,Portugal,Group,K,0
+2026-06-28,Congo DR,3,1,Uzbekistan,Group,K,0
+2026-06-28,Algeria,3,3,Austria,Group,J,0
+2026-06-28,Jordan,1,3,Argentina,Group,J,0
+2026-06-29,South Africa,0,1,Canada,R32,,0
+2026-06-30,Brazil,2,1,Japan,R32,,0
+2026-06-30,Germany,1,1,Paraguay,R32,,1
+2026-06-30,Netherlands,1,1,Morocco,R32,,1
+2026-07-01,Cote d'Ivoire,1,2,Norway,R32,,0
+2026-07-01,France,3,0,Sweden,R32,,0
+2026-07-01,Mexico,2,0,Ecuador,R32,,0
+2026-07-02,England,2,1,Congo DR,R32,,0
+2026-07-02,Belgium,3,2,Senegal,R32,,0
+2026-07-02,USA,2,0,Bosnia-Herzegovina,R32,,0
+2026-07-03,Spain,3,0,Austria,R32,,0
+2026-07-03,Portugal,2,1,Croatia,R32,,0
+2026-07-03,Switzerland,2,0,Algeria,R32,,0
+2026-07-04,Australia,1,1,Egypt,R32,,1
+2026-07-04,Argentina,3,2,Cabo Verde,R32,,0
+2026-07-04,Colombia,1,0,Ghana,R32,,0
+2026-07-05,Canada,0,3,Morocco,R16,,0
+2026-07-05,Paraguay,0,1,France,R16,,0
+2026-07-06,Brazil,1,2,Norway,R16,,0
+2026-07-06,Mexico,2,3,England,R16,,0
+2026-07-07,Portugal,0,1,Spain,R16,,0
+2026-07-07,USA,1,4,Belgium,R16,,0
+2026-07-08,Argentina,3,2,Egypt,R16,,0
+2026-07-08,Switzerland,0,0,Colombia,R16,,1
+2026-07-10,France,2,0,Morocco,QF,,0
+2026-07-11,Spain,2,1,Belgium,QF,,0
+2026-07-12,Norway,1,2,England,QF,,0
+2026-07-12,Argentina,3,1,Switzerland,QF,,0
+2026-07-15,France,0,2,Spain,SF,,0
+2026-07-16,England,1,2,Argentina,SF,,0
+2026-07-19,France,4,6,England,Bronze,,0
+2026-07-20,Spain,1,0,Argentina,Final,,0
