@@ -21,6 +21,19 @@ features = ["rank_advantage", "is_host", "same_confederation", "stage_num",
             "own_gf_form", "opp_ga_form", "team_is_european", "opp_is_european"]
 target = "goals_scored"
 
+# ---- Optimisation idea (from EDA, Figure 1b): the ranking effect levels off beyond about 30 places,
+#      so we test capping the ranking advantage. Capping replaces rank_advantage, so the model still has 8 variables.
+cap_results = []
+for cap in (10, 20, 30, 40, 50, None):
+    data["rank_capped"] = data["rank_advantage"] if cap is None else data["rank_advantage"].clip(-cap, cap)
+    cols = ["rank_capped" if f == "rank_advantage" else f for f in features]
+    result, _ = compare_models(data, cols, target, {"OLS (8 variables)": (LinearRegression(), cols)}, group_column="match_id", repeats=20)
+    cap_results.append({"ranking gap capped at": "no cap" if cap is None else f"±{cap}", "RMSE": result["RMSE"][0]})
+pd.DataFrame(cap_results).to_csv("../outputs/results/task22_cap_experiment.csv", index=False)
+print(pd.DataFrame(cap_results).round(3))
+data["rank_capped"] = data["rank_advantage"].clip(-30, 30)   # best cap
+features_capped = ["rank_capped" if f == "rank_advantage" else f for f in features]
+
 # ---- Part A: the 8-variable linear regression ----
 table, checks = fit_ols(data, features, target, cluster_ids=data["match_id"])
 table.to_csv("../outputs/results/task22_ols_coefficients.csv")
@@ -35,6 +48,7 @@ models = {
     "Baseline (mean)":   (DummyRegressor(), features),
     "OLS (rank only)":   (LinearRegression(), ["rank_advantage"]),
     "OLS (8 variables)": (LinearRegression(), features),
+    "OLS (8 vars, capped rank)": (LinearRegression(), features_capped),
     "Ridge":             (make_pipeline(StandardScaler(), RidgeCV(alphas=np.logspace(-2, 3, 20))), features),
     "Lasso":             (make_pipeline(StandardScaler(), LassoCV(cv=5)), features),
     "Poisson":           (make_pipeline(StandardScaler(), PoissonRegressor(alpha=1.0)), features),

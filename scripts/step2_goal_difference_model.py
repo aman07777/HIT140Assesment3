@@ -21,6 +21,19 @@ features = ["rank_diff", "host_advantage", "same_confederation", "stage_num",
             "titles_diff", "rest_diff", "points_diff", "conf_strength_diff"]
 target = "goal_diff"
 
+# ---- Optimisation idea (from EDA, Figure 1b): the ranking effect levels off beyond about 30 places,
+#      so we test capping the ranking gap. Capping replaces rank_diff, so the model still has 8 variables.
+cap_results = []
+for cap in (10, 20, 30, 40, 50, None):
+    data["rank_capped"] = data["rank_diff"] if cap is None else data["rank_diff"].clip(-cap, cap)
+    cols = ["rank_capped" if f == "rank_diff" else f for f in features]
+    result, _ = compare_models(data, cols, target, {"OLS (8 variables)": (LinearRegression(), cols)}, repeats=20)
+    cap_results.append({"ranking gap capped at": "no cap" if cap is None else f"±{cap}", "RMSE": result["RMSE"][0]})
+pd.DataFrame(cap_results).to_csv("../outputs/results/task21_cap_experiment.csv", index=False)
+print(pd.DataFrame(cap_results).round(3))
+data["rank_capped"] = data["rank_diff"].clip(-30, 30)       # best cap
+features_capped = ["rank_capped" if f == "rank_diff" else f for f in features]
+
 # ---- Part A: the 8-variable linear regression ----
 table, checks = fit_ols(data, features, target)
 table.to_csv("../outputs/results/task21_ols_coefficients.csv")
@@ -43,6 +56,7 @@ models = {
     "Baseline (mean)":   (DummyRegressor(), features),
     "OLS (rank only)":   (LinearRegression(), ["rank_diff"]),
     "OLS (8 variables)": (LinearRegression(), features),
+    "OLS (8 vars, capped rank)": (LinearRegression(), features_capped),
     "Ridge":             (make_pipeline(StandardScaler(), RidgeCV(alphas=np.logspace(-2, 3, 20))), features),
     "Lasso":             (make_pipeline(StandardScaler(), LassoCV(cv=5)), features),
     "Random forest":     (RandomForestRegressor(n_estimators=100, max_depth=3, min_samples_leaf=5, random_state=0), features),

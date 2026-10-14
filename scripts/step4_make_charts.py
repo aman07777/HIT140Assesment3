@@ -126,4 +126,32 @@ for ax, (file, title) in zip(axes, panels):
 fig.tight_layout(w_pad=1.0)
 fig.savefig("../outputs/fig2_model_comparison.png")
 plt.close(fig)
-print("Saved fig1_ranking_story.png and fig2_model_comparison.png")
+
+# ================= Figure 3 (exploratory analysis) =================
+# Correlation of every explanatory variable with the target. This tells us where the signal is
+# before we fit any model, and motivates the ranking-only and capped-ranking models.
+features_21 = ["rank_diff", "host_advantage", "same_confederation", "stage_num",
+               "titles_diff", "rest_diff", "points_diff", "conf_strength_diff"]
+features_22 = ["rank_advantage", "is_host", "same_confederation", "stage_num",
+               "own_gf_form", "opp_ga_form", "team_is_european", "opp_is_european"]
+fig, axes = plt.subplots(1, 2, figsize=(6.9, 2.3))
+for ax, (data, features, target, title) in zip(axes, [(match_data, features_21, "goal_diff", "(a) 2.1  Goal difference"),
+                                                      (team_data, features_22, "goals_scored", "(b) 2.2  Goals scored")]):
+    corr = data[features].corrwith(data[target]).sort_values()
+    colours = [BLUE if name in ("rank_diff", "rank_advantage") else GREY for name in corr.index]
+    ax.barh(range(len(corr)), corr.values, color=colours, height=0.6)
+    for i, value in enumerate(corr.values):
+        ax.text(value + (0.012 if value >= 0 else -0.012), i, f"{value:.2f}", va="center",
+                ha="left" if value >= 0 else "right", fontsize=7, color=TEXT)
+    ax.axvline(0, color=LIGHT_TEXT, linewidth=0.8)
+    ax.set_yticks(range(len(corr)))
+    ax.set_yticklabels(corr.index, fontsize=7.2)
+    ax.set_xlim(-0.34, 0.75)
+    ax.set_xlabel("Correlation with the target")
+    ax.set_title(title, loc="left", fontsize=8.2, fontweight="bold", color=TEXT)
+    tidy(ax)
+    ax.grid(axis="y", visible=False)
+fig.tight_layout(w_pad=1.0)
+fig.savefig("../outputs/fig3_correlations.png")
+plt.close(fig)
+print("Saved fig1_ranking_story.png, fig2_model_comparison.png and fig3_correlations.png")
